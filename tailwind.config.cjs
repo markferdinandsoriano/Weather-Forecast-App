@@ -10,9 +10,10 @@ module.exports = {
       },
     },
     screens: {
-      sm: { min: "300px", max: "300px" },
+      sm: { min: "300px", max: "600px" },
       md: { min: "600px", max: "1023px" },
-      lg: { min: "1024px" },
+      lg: { min: "1024px", max: "1024px" },
+      lg2: { min: "1025px", max: "1056px" },
       xl: { min: "1280px", max: "1535px" },
       "2xl": { min: "1536px" },
     },

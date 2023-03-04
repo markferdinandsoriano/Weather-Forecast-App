@@ -1,4 +1,5 @@
 import React from "react";
+import LoginButton from "../../Components/LoginButton";
 
 type Props = {};
 
@@ -14,11 +15,7 @@ const LandingScreen = (props: Props) => {
         </p>
       </div>
       <div className="flex flex-row justify-start w-full h-auto pt-[4em] pl-[1.5em]">
-        <div>
-          <button className="bg-blue-500 shadow-lg shadow-cyan-500/50 text-white px-[80%] py-[30%] text-lg font-poppins rounded-lg">
-            Login
-          </button>
-        </div>
+        <LoginButton />
       </div>
     </div>
   );

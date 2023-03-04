@@ -3,6 +3,7 @@ import LandingPage from "./Pages/LandingScreen";
 import HomeScreen from "./Pages/HomeScreen";
 import WeatherScreen from "./Pages/WeatherScreen";
 import Layout from "../src/Components/Layout";
+import ProtectedRoute from "./Protected/protecteRoute";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./App.css";
 
@@ -20,8 +21,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/homeScreen" element={<HomeScreen />} />
-          <Route path="/WeatherScreen" element={<WeatherScreen />} />
+          <Route element={<ProtectedRoute user={false} redirectPath={"/"} />}>
+            <Route path="/homeScreen" element={<HomeScreen />} />
+            <Route path="/WeatherScreen" element={<WeatherScreen />} />
+          </Route>
         </Routes>
       </Router>
     </Layout>

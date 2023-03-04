@@ -1,4 +1,5 @@
 import TextField from "../../Components/Textfield";
+import Button from "../../Components//Button";
 import viewModel from "./viewModel";
 
 const HomeScreen = () => {
@@ -17,7 +18,12 @@ const HomeScreen = () => {
             </p>
           </a>
         </div>
-        <TextField />
+        <div>
+          <TextField />
+          <div className="w-full flex flex-row items-center justify-center">
+            <Button name={"Display Weather"} />
+          </div>
+        </div>
       </div>
     </div>
   );

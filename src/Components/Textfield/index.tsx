@@ -14,7 +14,7 @@ const TextField = () => {
         height={30}
       />
       <input
-        className="w-full py-[10px] pl-[50px] rounded-lg outline-0 border-4 border-cyan-400/100"
+        className="w-full py-[10px] pl-[50px] rounded-[50px] outline-0 border-4 border-cyan-400/100"
         type="text"
         placeholder="Search City"
         autoComplete="off"

@@ -34,7 +34,7 @@ React-router
 Auth0
 ```
 
-# Sample
+# Sample Demo
 
 ![Weather Forecast App](/public/weatherForeCast.gif "Weather Forecast App")
 

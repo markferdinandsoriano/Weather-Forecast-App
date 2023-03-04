@@ -18,6 +18,14 @@ const HomeScreen = () => {
             </p>
           </a>
         </div>
+        {model?.isError && (
+          <div className="text-rose-500  flex flex-col items-center gap-y-1">
+            <p className="text-xl capitalize font-montesserat">
+              {model?.isError}{" "}
+            </p>
+            <p>try again, type another city</p>
+          </div>
+        )}
         <div>
           <TextField name={"city"} handleChange={model?.handleChange} />
           <div className="w-full flex flex-row items-center justify-center">

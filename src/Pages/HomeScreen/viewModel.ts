@@ -21,6 +21,8 @@ const viewModel = () => {
     [key: string]: unknown;
   }>({});
 
+  const [isError, setErrorMessage] = React.useState<string>("");
+
   const fetchData = async () => {
     const urlResult = await getGitHubUrl({ nickName: `${user?.nickname}` });
 
@@ -46,23 +48,29 @@ const viewModel = () => {
 
   const fetchWeatherData = async () => {
     const result = await getWeatherByCity({ city: value });
-    setWeatherData({ ...weatherData, result });
+    if (result?.cod === "404") {
+      setErrorMessage(result?.message);
+    } else {
+      setErrorMessage("");
+      setWeatherData(result);
+    }
   };
 
   React.useEffect(() => {
     if (value !== "") {
       fetchWeatherData();
     }
-  }, [useDebounce(value, 1000)]);
+  }, [useDebounce(value, 500)]);
 
   const onClick = React.useCallback(() => {
-    navigate("/WeatherScreen", { state: weatherData });
-  }, []);
+    !isError && navigate("/WeatherScreen", { state: weatherData });
+  }, [weatherData, isError]);
 
   return {
     userData,
     handleChange,
     onClick,
+    isError,
   };
 };
 

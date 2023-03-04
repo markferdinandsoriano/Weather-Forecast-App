@@ -23,30 +23,34 @@ const Body = [
 const Table = ({}: Props) => {
   return (
     <table className="w-full p-[1em]">
-      <tr className="border-t-2  border-cyan-500 text-left">
-        {header?.map((items) => {
-          return (
-            <th
-              key={items?.name}
-              className="border-t-2 border-l-2 border-r-2 bg-cyan-100 border-cyan-500 font-montesserat"
-            >
-              {items?.name}
-            </th>
-          );
-        })}
-      </tr>
-      <tr className="border-l-2 border-r-2 border-cyan-500">
-        {Body?.map((items) => {
-          return (
-            <td
-              key={items?.name}
-              className="border-l-2 border-b-2 border-cyan-500 font-montesserat"
-            >
-              {items?.name}
-            </td>
-          );
-        })}
-      </tr>
+      <thead>
+        <tr className="border-t-2  border-cyan-500 text-left">
+          {header?.map((items) => {
+            return (
+              <th
+                key={items?.name}
+                className="border-t-2 border-l-2 border-r-2 bg-cyan-100 border-cyan-500 font-montesserat"
+              >
+                {items?.name}
+              </th>
+            );
+          })}
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="border-l-2 border-r-2 border-cyan-500">
+          {Body?.map((items) => {
+            return (
+              <td
+                key={items?.name}
+                className="border-l-2 border-b-2 border-cyan-500 font-montesserat"
+              >
+                {items?.name}
+              </td>
+            );
+          })}
+        </tr>
+      </tbody>
     </table>
   );
 };

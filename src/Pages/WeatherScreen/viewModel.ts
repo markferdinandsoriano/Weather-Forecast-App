@@ -1,8 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const viewModel = () => {
   const navigate = useNavigate();
+  const { state } = useLocation();
+
+  console.log("state", state);
 
   const handleGoback = React.useCallback(() => {
     navigate("/homeScreen");

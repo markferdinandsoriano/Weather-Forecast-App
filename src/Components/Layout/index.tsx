@@ -9,7 +9,7 @@ const Layout = ({ children }: Props) => {
   return (
     <div className="bg-sky-50 w-screen h-screen flex flex-col">
       <HeaderBar />
-      <div className="border-t-4 border-sky-500 h-[85%] sm:h-[80%] w-screen flex justify-center">
+      <div className="border-t-4 border-sky-500 h-[85%] sm:h-[auto] w-screen flex justify-center">
         {children}
       </div>
     </div>

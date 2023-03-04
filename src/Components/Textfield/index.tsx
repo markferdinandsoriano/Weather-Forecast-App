@@ -1,5 +1,5 @@
 import React from "react";
-import searchIcon from "../../assets/searchIcon.png";
+import searchIcon from "../../Common/assets/searchIcon.png";
 
 type Props = {
   name?: string;

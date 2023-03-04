@@ -5,9 +5,13 @@ const HomeScreen = () => {
 
   return (
     <div className=" w-full h-full flex flex-row items-start justify-center pt-[3em]">
-      <div className="bg-red-100 w-[50%] h-full flex flex-row items-start justify-center">
-        <p>{model?.userData["nickName"]}</p>
-        <p>{model?.userData["gitHubUrl"]}</p>
+      <div className="w-[50%] h-full flex flex-row items-start justify-center">
+        <div className="flex flex-col items-center gap-y-4 mt-[1em]">
+          <p className="font-montesserat">{model?.userData["nickName"]}</p>
+          <a href={model?.userData["gitHubUrl"]} target="_blank">
+            <p className="font-montesserat">{model?.userData["gitHubUrl"]}</p>
+          </a>
+        </div>
       </div>
     </div>
   );

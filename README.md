@@ -1,7 +1,3 @@
-# Weather-Forecast-App
-This is a fun Weather Forecast App
-
-
 # Weather Forecast App
 This is a weather forecast app that allows you to view the temperature, humidity, pressure, weather condition and description for any city just by entering its name. The app is built using ReactJS and utilizes an API to fetch the weather data.
 

@@ -1,15 +1,9 @@
 import React from "react";
+import TableHeader from "../../Common/utils/tableHeader";
 
-type Props = {};
-
-const header = [
-  { name: "Date (mm/dd/yyyy)" },
-  { name: "Temp (F)" },
-  { name: "Description" },
-  { name: "Main" },
-  { name: "Pressure" },
-  { name: "Humidity" },
-];
+type Props = {
+  data: Array<{ [key: string]: unknown }>;
+};
 
 const Body = [
   { name: "Date" },
@@ -25,7 +19,7 @@ const Table = ({}: Props) => {
     <table className="w-full p-[1em]">
       <thead>
         <tr className="border-t-2  border-cyan-500 text-left">
-          {header?.map((items) => {
+          {TableHeader?.map((items) => {
             return (
               <th
                 key={items?.name}

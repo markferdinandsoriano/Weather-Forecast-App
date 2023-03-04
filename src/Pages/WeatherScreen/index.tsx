@@ -4,6 +4,9 @@ import viewModel from "./viewModel";
 
 const WeatherScreen = () => {
   const model = viewModel();
+
+  console.log("model", model?.data);
+
   return (
     <div className="w-full flex flex-col items-center justify-start mt-[10%]">
       <div className="w-[50%] bg-white-100">

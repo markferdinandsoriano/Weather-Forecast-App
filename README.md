@@ -14,7 +14,7 @@ To use the app, follow these steps:
 1. Start the app using the command: npm start
 2. Open your web browser and go to http://localhost:3000/
 3. Login using your github credentials
-4. Enter the name of the city for which you want to see the weather forecast in the search box, if no errors prompt just click the diplay weather it will    navigate you to the next page.
+4. Enter the name of the city for which you want to see the weather forecast in the search box, if no errors prompt just click the diplay weather it will navigate you to the next page.
 5. The app will display the current temperature, humidity, pressure, weather condition and description for the selected city.
 ```  
 

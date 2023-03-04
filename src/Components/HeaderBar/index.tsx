@@ -1,5 +1,4 @@
-import React from "react";
-import Cloud from "../../assets/cloud.png";
+import Cloud from "../../Common/assets/cloud.png";
 import LogOutButton from "../LogoutButton";
 
 type Props = {};

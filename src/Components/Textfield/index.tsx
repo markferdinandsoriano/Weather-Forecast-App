@@ -1,9 +1,12 @@
 import React from "react";
 import searchIcon from "../../assets/searchIcon.png";
 
-type Props = {};
+type Props = {
+  name?: string;
+  handleChange: (data: React.ChangeEvent<HTMLInputElement>) => void;
+};
 
-const TextField = () => {
+const TextField = ({ name, handleChange }: Props) => {
   return (
     <div className="w-auto mb-[10px] relative">
       <img
@@ -14,6 +17,8 @@ const TextField = () => {
         height={30}
       />
       <input
+        name={name}
+        onChange={(e) => handleChange(e)}
         className="w-full py-[10px] pl-[50px] rounded-[50px] outline-0 border-4 border-cyan-400/100"
         type="text"
         placeholder="Search City"

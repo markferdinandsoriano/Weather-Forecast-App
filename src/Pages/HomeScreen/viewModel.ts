@@ -28,8 +28,18 @@ const viewModel = () => {
     }
   }, [isAuthenticated, user]);
 
+  const handleChange = React.useCallback(
+    (e: { target: { name: string; value: string } }) => {
+      const name: string = e?.target?.name;
+      const value = e?.target?.value;
+      console.log("name", name, "value", value);
+    },
+    []
+  );
+
   return {
     userData,
+    handleChange,
   };
 };
 

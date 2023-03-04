@@ -1,16 +1,16 @@
 import { Navigate, Outlet } from "react-router-dom";
 
 type Props = {
-  user?: boolean;
+  isAuthenticated?: boolean;
   redirectPath?: string;
 };
 
-const ProtectedRoute = ({ user, redirectPath }: Props) => {
-  if (!user) {
+const ProtectedRoute = ({ isAuthenticated, redirectPath }: Props) => {
+  if (!isAuthenticated) {
     return <Navigate to={redirectPath || "/"} replace />;
+  } else {
+    return <Outlet />;
   }
-
-  return <Outlet />;
 };
 
 export default ProtectedRoute;

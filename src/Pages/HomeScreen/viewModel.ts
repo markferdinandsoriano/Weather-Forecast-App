@@ -17,6 +17,10 @@ const viewModel = () => {
     gitHubUrl: "",
   });
 
+  const [weatherData, setWeatherData] = React.useState<{
+    [key: string]: unknown;
+  }>({});
+
   const fetchData = async () => {
     const urlResult = await getGitHubUrl({ nickName: `${user?.nickname}` });
 
@@ -42,7 +46,7 @@ const viewModel = () => {
 
   const fetchWeatherData = async () => {
     const result = await getWeatherByCity({ city: value });
-    console.log("result", result);
+    setWeatherData({ ...weatherData, result });
   };
 
   React.useEffect(() => {
@@ -52,7 +56,7 @@ const viewModel = () => {
   }, [useDebounce(value, 1000)]);
 
   const onClick = React.useCallback(() => {
-    navigate("/WeatherScreen");
+    navigate("/WeatherScreen", { state: weatherData });
   }, []);
 
   return {

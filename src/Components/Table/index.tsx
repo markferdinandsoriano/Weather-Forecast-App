@@ -26,7 +26,10 @@ const Table = ({}: Props) => {
       <tr className="border-t-2  border-cyan-500 text-left">
         {header?.map((items) => {
           return (
-            <th className="border-t-2 border-l-2 border-r-2 bg-cyan-100 border-cyan-500 font-montesserat">
+            <th
+              key={items?.name}
+              className="border-t-2 border-l-2 border-r-2 bg-cyan-100 border-cyan-500 font-montesserat"
+            >
               {items?.name}
             </th>
           );
@@ -35,7 +38,10 @@ const Table = ({}: Props) => {
       <tr className="border-l-2 border-r-2 border-cyan-500">
         {Body?.map((items) => {
           return (
-            <td className="border-l-2 border-b-2 border-cyan-500 font-montesserat">
+            <td
+              key={items?.name}
+              className="border-l-2 border-b-2 border-cyan-500 font-montesserat"
+            >
               {items?.name}
             </td>
           );

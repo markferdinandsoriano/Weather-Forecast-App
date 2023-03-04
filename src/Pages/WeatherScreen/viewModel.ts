@@ -8,6 +8,7 @@ const viewModel = () => {
   const { state } = useLocation();
 
   const [data, setData] = React.useState<Array<{ [key: string]: unknown }>>([]);
+  const [windowSize, setWindowSize] = React.useState<number>(window.innerWidth);
 
   React.useEffect(() => {
     if (JSON.stringify(state) !== "{}") {
@@ -31,9 +32,22 @@ const viewModel = () => {
     navigate("/homeScreen");
   }, []);
 
+  React.useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  });
+
   return {
     handleGoback,
     data,
+    windowSize,
   };
 };
 

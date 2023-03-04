@@ -63,7 +63,11 @@ const viewModel = () => {
   }, [useDebounce(value, 500)]);
 
   const onClick = React.useCallback(() => {
-    !isError && navigate("/WeatherScreen", { state: weatherData });
+    if (value === "") {
+      setErrorMessage("Please type City");
+    } else {
+      !isError && navigate("/WeatherScreen", { state: weatherData });
+    }
   }, [weatherData, isError]);
 
   return {

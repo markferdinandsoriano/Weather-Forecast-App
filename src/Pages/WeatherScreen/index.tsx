@@ -5,12 +5,10 @@ import viewModel from "./viewModel";
 const WeatherScreen = () => {
   const model = viewModel();
 
-  console.log("model", model?.data);
-
   return (
     <div className="w-full flex flex-col items-center justify-start mt-[10%]">
       <div className="w-[50%] bg-white-100">
-        <Table />
+        <Table data={model?.data} windowSize={model?.windowSize} />
       </div>
       <div className="w-[50%] h-auto flex flex-row items-center justify-end mt-[3em]">
         <div className="w-[20%] flex flex-row justify-end">

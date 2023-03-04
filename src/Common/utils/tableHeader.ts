@@ -1,5 +1,5 @@
 const TableHeader = [
-  { name: "date", accessor: "date" },
+  { name: "(mm/dd/yyyy)", accessor: "date" },
   { name: "Temp (F)", accessor: "temp" },
   { name: "Description", accessor: "description" },
   { name: "Main", accessor: "main" },
@@ -7,4 +7,13 @@ const TableHeader = [
   { name: "Humidity", accessor: "humidity" },
 ];
 
-export default TableHeader;
+const TableDateHeader = [
+  { name: "Date" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+];
+
+export { TableHeader, TableDateHeader };

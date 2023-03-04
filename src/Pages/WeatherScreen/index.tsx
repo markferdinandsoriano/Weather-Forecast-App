@@ -3,7 +3,7 @@ import React from "react";
 type Props = {};
 
 const WeatherScreen = (props: Props) => {
-  return <div>index</div>;
+  return <div>WeatherScreen</div>;
 };
 
 export default WeatherScreen;

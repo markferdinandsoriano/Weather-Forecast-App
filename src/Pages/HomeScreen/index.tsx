@@ -21,7 +21,7 @@ const HomeScreen = () => {
         <div>
           <TextField name={"city"} handleChange={model?.handleChange} />
           <div className="w-full flex flex-row items-center justify-center">
-            <Button name={"Display Weather"} />
+            <Button name={"Display Weather"} onClick={model?.onClick} />
           </div>
         </div>
       </div>

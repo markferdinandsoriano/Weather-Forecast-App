@@ -1,8 +1,10 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { getGitHubUrl } from "../../api/fetch";
+import { useNavigate } from "react-router-dom";
 
 const viewModel = () => {
+  const navigate = useNavigate();
   const { user, isAuthenticated } = useAuth0();
 
   const [userData, setUserData] = React.useState<{
@@ -37,9 +39,14 @@ const viewModel = () => {
     []
   );
 
+  const onClick = React.useCallback(() => {
+    navigate("/WeatherScreen");
+  }, []);
+
   return {
     userData,
     handleChange,
+    onClick,
   };
 };
 

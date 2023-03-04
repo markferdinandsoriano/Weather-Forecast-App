@@ -66,6 +66,7 @@ const viewModel = () => {
     if (value === "") {
       setErrorMessage("Please type City");
     } else {
+      setErrorMessage("");
       !isError && navigate("/WeatherScreen", { state: weatherData });
     }
   }, [weatherData, isError]);
